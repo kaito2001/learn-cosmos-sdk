@@ -1,0 +1,12 @@
+syntax = "proto3";
+package vbicosmosbasic.vbicosmosbasic;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "vbi-cosmos-basic/x/vbicosmosbasic/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}

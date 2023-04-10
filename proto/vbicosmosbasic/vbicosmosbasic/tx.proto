@@ -1,0 +1,7 @@
+syntax = "proto3";
+package vbicosmosbasic.vbicosmosbasic;
+
+option go_package = "vbi-cosmos-basic/x/vbicosmosbasic/types";
+
+// Msg defines the Msg service.
+service Msg {}
