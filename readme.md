@@ -7,4 +7,4 @@ Purpose: Chain interaction serves as cornerstone in helping a person get familia
 
 1. Group 1: Starting a chain
 - [Lesson 1: Overview Cosmos-sdk and setup environment](docs/chapter_1/lesson_1.md)
-- [Lesson 2: Configuration of node ports]()    
+- [Lesson 2: Interact local chain and make the first transaction ](docs/chapter_1/lesson_2.md)    

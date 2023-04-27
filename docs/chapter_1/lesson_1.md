@@ -20,7 +20,7 @@ Is a platform that helps users to build a blockchain (Cosmos ecosystem) easily a
 
 * Auth - Authentication of accounts and transactions for Cosmos SDK applications.
 * Authz - Authorization for accounts to perform actions on behalf of other accounts.
-* Bank - Token transfer functionalities.
+* Bank - Token transfer functionalBin file ities.
 * Distribution - Fee distribution, and staking token provision distribution.
 * Governance - On-chain proposals and voting.
 * Mint - Creation of new units of staking token.
