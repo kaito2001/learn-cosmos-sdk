@@ -1,0 +1,17 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "a quick package to demonstrate how to interact with node through API",
+  "main": "index.js",
+  "scripts": {
+    "run": "npx ts-node index.ts"
+  },
+  "author": "kaito2001",
+  "license": "ISC",
+  "dependencies": {
+    "@cosmjs/stargate": "^0.29.5",
+    "axios": "^1.2.5",
+    "dotenv": "^16.0.3",
+    "ts-node": "^10.9.1"
+  }
+}
