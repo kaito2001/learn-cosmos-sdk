@@ -10,3 +10,4 @@ Purpose: Chain interaction serves as cornerstone in helping a person get familia
 - [Lesson 2: Interact chain and make the first transaction](docs/chapter_1/lesson_2.md)    
 - [Lesson 3: Interacting chain with CLI and config port](docs/chapter_1/lesson_3.md)
 - [Lesson 4: Interacting chain with API and make transactions with lib Cosmjs](docs/chapter_1/lesson_4.md)
+- [Lesson 5: Genesis file - Part 1](docs/chapter_1/lesson_5.md)
