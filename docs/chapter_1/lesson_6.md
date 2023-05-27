@@ -7,7 +7,7 @@ Read previos lesson at: https://github.com/kaito2001/learn-cosmos-sdk-vbi/blob/m
 
 In this lesson, We'll create a basic chain for yourself not just with a command like "ignite chain serve" but through setup by step.
 
-# Lesson 5: Make basic chain
+# Lesson 6: Make Basic Chain
 
 ## Setup binary file
 
