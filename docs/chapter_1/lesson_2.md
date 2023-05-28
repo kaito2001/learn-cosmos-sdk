@@ -2,9 +2,9 @@ Goal:
 * Learners should understand how about interact local with chain
 * Learners should be execution success transaction with address's balances.
 
-# Lesson 2: Interact chain and make the first transaction   
+# Lesson 2: Interacting chain and make the first transaction   
 
-## Interact local
+## Local interaction
 
 * In the prev lesson, we installed the environment and launched a simulation chain, read at: https://github.com/kaito2001/learn-cosmos-sdk-vbi/blob/main/docs/chapter_1/lesson_1.md.
 
