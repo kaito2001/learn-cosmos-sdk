@@ -1,6 +1,6 @@
 Goal:
 * Learner should be understand what's genesis file. 
-* Learner should be understand some field in genesis file (chain_id, height, bank)
+* Learner should be understand some field in genesis file (chain_id, height)
 
 In previous lesson, we did make interacting chain with API and use the cosmjs client lib to interact with chain with example sign and execute transactions.
 
