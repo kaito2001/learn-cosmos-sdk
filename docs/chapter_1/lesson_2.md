@@ -2,7 +2,7 @@ Goal:
 * Learners should understand how about interact local with chain
 * Learners should be execution success transaction with address's balances.
 
-# Lesson 2: Interacting chain and make the first transaction   
+# Lesson 2: Make the first transaction   
 
 ## Local interaction
 
