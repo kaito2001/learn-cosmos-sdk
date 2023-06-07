@@ -1,7 +1,8 @@
 # VBICOSMOSBASIC
-**VBICOSMOSBASIC** is a blockchain built using Cosmos SDK and Tendermint and created with [Ignite CLI](https://ignite.com/cli).
+**VBICOSMOSBASIC** is a blockchain built using Cosmos SDK and CometBFT consensus and created with [Ignite CLI](https://ignite.com/cli).
 
-Born with the goal of making it easy for everyone to get acquainted and master the Cosmos platform.
+Born with the goal of making it easy for everyone to get acquainted and master the Cosmos platform. 
+In Group 1, learners will understand the basic concept of Cosmos architecture as well as be able to run and operate a chain of 1 node and set up the validator themselves.
 
 1. Group 1: Starting a chain
 - [Lesson 1: Overview Cosmos-sdk and setup environment](docs/chapter_1/lesson_1.md)
