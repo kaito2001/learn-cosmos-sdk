@@ -15,5 +15,7 @@ In Group 1 (Basic), learners will understand the basic concept of Cosmos archite
 
 In Group 2 (Advanced), learners will understand the data transmission architecture in Cosmos, develop themselves a data processing module to store in dababase for execution and querying.
 
-- [Lesson 1: RPC Model - Part 1](docs/chapter_2/lesson_1.md)
+2. Group 2: Custom Module Chain (Advanced)
+
+- [Lesson 1: gRPC Model](docs/chapter_2/lesson_1.md)
  
