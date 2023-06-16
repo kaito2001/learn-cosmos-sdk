@@ -45,10 +45,15 @@ protoc --go_out=. example/test.proto # "example/test.proto": Relative Path
 
 Now, we'll see filename's: test.pb.go 
 
-Create new dir name's proto-test and make new file's: execution. Parse it to yourcode
+Create new dir name's proto-test and make new file's: execution. Parse it to your code https://github.com/kaito2001/learn-cosmos-sdk-vbi/blob/main/proto-test/execution.go
 
+* Note: All explanations of working codes are clearly commented (encode, decode)
 
+And after you run successfully: it'll show for u 
 
+![result](images/result.png)
+
+## Help Video: 
 
 
 
