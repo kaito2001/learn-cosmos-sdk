@@ -18,4 +18,5 @@ In Group 2 (Advanced), learners will understand the data transmission architectu
 2. Group 2: Custom Module Chain (Advanced)
 
 - [Lesson 1: gRPC Model](docs/chapter_2/lesson_1.md)
+- [Lesson 2: Make First Module](docs/chapter_2/lesson_2.md)
  
