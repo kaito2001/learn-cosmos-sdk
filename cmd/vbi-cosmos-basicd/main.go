@@ -8,7 +8,6 @@ import (
 
 	"vbi-cosmos-basic/app"
 	"vbi-cosmos-basic/cmd/vbi-cosmos-basicd/cmd"
-	prototest "vbi-cosmos-basic/proto-test"
 )
 
 func main() {
@@ -23,6 +22,6 @@ func main() {
 		}
 	}
 
-	prototest.Execution()
+	// prototest.Execution()
 
 }
