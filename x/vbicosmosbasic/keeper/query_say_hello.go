@@ -8,6 +8,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+	"fmt"
 )
 
 func (k Keeper) SayHello(goCtx context.Context, req *types.QuerySayHelloRequest) (*types.QuerySayHelloResponse, error) {
@@ -20,5 +21,5 @@ func (k Keeper) SayHello(goCtx context.Context, req *types.QuerySayHelloRequest)
 	// TODO: Process the query
 	_ = ctx
 
-	return &types.QuerySayHelloResponse{}, nil
+	return &types.QuerySayHelloResponse{Name: fmt.Sprintf("Hello, %s handsome!", req.Name)}, nil
 }
