@@ -1,0 +1,13 @@
+syntax = "proto3";
+package vbicosmosbasic.chat;
+
+option go_package = "vbi-cosmos-basic/x/chat/types";
+
+message ChatPacketData {
+    oneof packet {
+        NoData noData = 1;
+    }
+}
+
+message NoData {
+}

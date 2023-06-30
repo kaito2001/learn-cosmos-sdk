@@ -5,10 +5,10 @@ import (
 
 	"vbi-cosmos-basic/x/vbicosmosbasic/types"
 
+	"fmt"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"fmt"
 )
 
 func (k Keeper) SayHello(goCtx context.Context, req *types.QuerySayHelloRequest) (*types.QuerySayHelloResponse, error) {
