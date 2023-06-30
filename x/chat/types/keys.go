@@ -28,3 +28,8 @@ var (
 func KeyPrefix(p string) []byte {
 	return []byte(p)
 }
+
+const (
+	DataKey      = "Data/value/"
+	DataCountKey = "Data/count/"
+)

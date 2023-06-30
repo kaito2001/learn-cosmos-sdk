@@ -1,26 +1,58 @@
 syntax = "proto3";
+
 package vbicosmosbasic.chat;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "vbicosmosbasic/chat/params.proto";
+import "vbicosmosbasic/chat/data.proto";
 
 option go_package = "vbi-cosmos-basic/x/chat/types";
 
 // Query defines the gRPC querier service.
 service Query {
+  
   // Parameters queries the parameters of the module.
-  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/vbi-cosmos-basic/chat/params";
+  
+  }
+  
+  // Queries a list of Data items.
+  rpc Data    (QueryGetDataRequest) returns (QueryGetDataResponse) {
+    option (google.api.http).get = "/vbi-cosmos-basic/chat/data/{id}";
+  
+  }
+  rpc DataAll (QueryAllDataRequest) returns (QueryAllDataResponse) {
+    option (google.api.http).get = "/vbi-cosmos-basic/chat/data";
+  
   }
 }
-
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
 
 // QueryParamsResponse is response type for the Query/Params RPC method.
 message QueryParamsResponse {
+  
   // params holds all the parameters of this module.
   Params params = 1 [(gogoproto.nullable) = false];
 }
+
+message QueryGetDataRequest {
+  uint64 id = 1;
+}
+
+message QueryGetDataResponse {
+  Data Data = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllDataRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllDataResponse {
+  repeated Data                                   Data       = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+

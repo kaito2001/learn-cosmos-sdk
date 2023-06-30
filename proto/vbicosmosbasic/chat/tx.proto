@@ -1,7 +1,38 @@
 syntax = "proto3";
+
 package vbicosmosbasic.chat;
+
+import "vbicosmosbasic/chat/data.proto";
 
 option go_package = "vbi-cosmos-basic/x/chat/types";
 
 // Msg defines the Msg service.
-service Msg {}
+service Msg {
+  rpc CreateData (MsgCreateData) returns (MsgCreateDataResponse);
+  rpc UpdateData (MsgUpdateData) returns (MsgUpdateDataResponse);
+  rpc DeleteData (MsgDeleteData) returns (MsgDeleteDataResponse);
+}
+message MsgCreateData {
+  string creator = 1;
+  string content = 2;
+}
+
+message MsgCreateDataResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateData {
+  string creator = 1;
+  uint64 id      = 2;
+  string content = 3;
+}
+
+message MsgUpdateDataResponse {}
+
+message MsgDeleteData {
+  string creator = 1;
+  uint64 id      = 2;
+}
+
+message MsgDeleteDataResponse {}
+

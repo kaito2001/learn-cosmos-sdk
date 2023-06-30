@@ -1,0 +1,10 @@
+syntax = "proto3";
+package vbicosmosbasic.chat;
+
+option go_package = "vbi-cosmos-basic/x/chat/types";
+
+message Data {
+  uint64 id = 1;
+  string content = 2; 
+  string creator = 3;
+}

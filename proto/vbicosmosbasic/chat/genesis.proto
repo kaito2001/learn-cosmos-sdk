@@ -4,12 +4,15 @@ package vbicosmosbasic.chat;
 
 import "gogoproto/gogo.proto";
 import "vbicosmosbasic/chat/params.proto";
+import "vbicosmosbasic/chat/data.proto";
 
 option go_package = "vbi-cosmos-basic/x/chat/types";
 
 // GenesisState defines the chat module's genesis state.
 message GenesisState {
-  Params params  = 1 [(gogoproto.nullable) = false];
-  string port_id = 2;
+           Params params    = 1 [(gogoproto.nullable) = false];
+           string port_id   = 2;
+  repeated Data   dataList  = 3 [(gogoproto.nullable) = false];
+           uint64 dataCount = 4;
 }
 
