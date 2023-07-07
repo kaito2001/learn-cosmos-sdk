@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package vbicosmosbasic.todo;
+
+import "gogoproto/gogo.proto";
+import "vbicosmosbasic/todo/params.proto";
+import "vbicosmosbasic/todo/paper.proto";
+
+option go_package = "vbi-cosmos-basic/x/todo/types";
+
+// GenesisState defines the todo module's genesis state.
+message GenesisState {
+           Params params     = 1 [(gogoproto.nullable) = false];
+  repeated Paper  paperList  = 2 [(gogoproto.nullable) = false];
+           uint64 paperCount = 3;
+}
+

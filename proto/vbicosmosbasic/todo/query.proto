@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package vbicosmosbasic.todo;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "vbicosmosbasic/todo/params.proto";
+import "vbicosmosbasic/todo/paper.proto";
+
+option go_package = "vbi-cosmos-basic/x/todo/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  
+  // Parameters queries the parameters of the module.
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/vbi-cosmos-basic/todo/params";
+  
+  }
+  
+  // Queries a list of Paper items.
+  rpc Paper    (QueryGetPaperRequest) returns (QueryGetPaperResponse) {
+    option (google.api.http).get = "/vbi-cosmos-basic/todo/paper/{id}";
+  
+  }
+  rpc PaperAll (QueryAllPaperRequest) returns (QueryAllPaperResponse) {
+    option (google.api.http).get = "/vbi-cosmos-basic/todo/paper";
+  
+  }
+}
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  
+  // params holds all the parameters of this module.
+  Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryGetPaperRequest {
+  uint64 id = 1;
+}
+
+message QueryGetPaperResponse {
+  Paper Paper = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllPaperRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllPaperResponse {
+  repeated Paper                                  Paper      = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+

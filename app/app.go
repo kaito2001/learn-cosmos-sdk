@@ -106,6 +106,9 @@ import (
 	chatmodule "vbi-cosmos-basic/x/chat"
 	chatmodulekeeper "vbi-cosmos-basic/x/chat/keeper"
 	chatmoduletypes "vbi-cosmos-basic/x/chat/types"
+	todomodule "vbi-cosmos-basic/x/todo"
+	todomodulekeeper "vbi-cosmos-basic/x/todo/keeper"
+	todomoduletypes "vbi-cosmos-basic/x/todo/types"
 	vbicosmosbasicmodule "vbi-cosmos-basic/x/vbicosmosbasic"
 	vbicosmosbasicmodulekeeper "vbi-cosmos-basic/x/vbicosmosbasic/keeper"
 	vbicosmosbasicmoduletypes "vbi-cosmos-basic/x/vbicosmosbasic/types"
@@ -169,6 +172,7 @@ var (
 		vesting.AppModuleBasic{},
 		vbicosmosbasicmodule.AppModuleBasic{},
 		chatmodule.AppModuleBasic{},
+		todomodule.AppModuleBasic{},
 		// this line is used by starport scaffolding # stargate/app/moduleBasic
 	)
 
@@ -245,6 +249,8 @@ type App struct {
 	VbicosmosbasicKeeper vbicosmosbasicmodulekeeper.Keeper
 	ScopedChatKeeper     capabilitykeeper.ScopedKeeper
 	ChatKeeper           chatmodulekeeper.Keeper
+
+	TodoKeeper todomodulekeeper.Keeper
 	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
 
 	// mm is the module manager
@@ -291,6 +297,7 @@ func New(
 		icacontrollertypes.StoreKey,
 		vbicosmosbasicmoduletypes.StoreKey,
 		chatmoduletypes.StoreKey,
+		todomoduletypes.StoreKey,
 		// this line is used by starport scaffolding # stargate/app/storeKey
 	)
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey)
@@ -524,6 +531,15 @@ func New(
 	chatModule := chatmodule.NewAppModule(appCodec, app.ChatKeeper, app.AccountKeeper, app.BankKeeper)
 
 	chatIBCModule := chatmodule.NewIBCModule(app.ChatKeeper)
+
+	app.TodoKeeper = *todomodulekeeper.NewKeeper(
+		appCodec,
+		keys[todomoduletypes.StoreKey],
+		keys[todomoduletypes.MemStoreKey],
+		app.GetSubspace(todomoduletypes.ModuleName),
+	)
+	todoModule := todomodule.NewAppModule(appCodec, app.TodoKeeper, app.AccountKeeper, app.BankKeeper)
+
 	// this line is used by starport scaffolding # stargate/app/keeperDefinition
 
 	/**** IBC Routing ****/
@@ -592,6 +608,7 @@ func New(
 		icaModule,
 		vbicosmosbasicModule,
 		chatModule,
+		todoModule,
 		// this line is used by starport scaffolding # stargate/app/appModule
 	)
 
@@ -623,6 +640,7 @@ func New(
 		vestingtypes.ModuleName,
 		vbicosmosbasicmoduletypes.ModuleName,
 		chatmoduletypes.ModuleName,
+		todomoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	)
 
@@ -649,6 +667,7 @@ func New(
 		vestingtypes.ModuleName,
 		vbicosmosbasicmoduletypes.ModuleName,
 		chatmoduletypes.ModuleName,
+		todomoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	)
 
@@ -680,6 +699,7 @@ func New(
 		vestingtypes.ModuleName,
 		vbicosmosbasicmoduletypes.ModuleName,
 		chatmoduletypes.ModuleName,
+		todomoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	)
 
@@ -711,6 +731,7 @@ func New(
 		transferModule,
 		vbicosmosbasicModule,
 		chatModule,
+		todoModule,
 		// this line is used by starport scaffolding # stargate/app/appModule
 	)
 	app.sm.RegisterStoreDecoders()
@@ -917,6 +938,7 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 	paramsKeeper.Subspace(icahosttypes.SubModuleName)
 	paramsKeeper.Subspace(vbicosmosbasicmoduletypes.ModuleName)
 	paramsKeeper.Subspace(chatmoduletypes.ModuleName)
+	paramsKeeper.Subspace(todomoduletypes.ModuleName)
 	// this line is used by starport scaffolding # stargate/app/paramSubspace
 
 	return paramsKeeper

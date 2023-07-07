@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package vbicosmosbasic.todo;
+
+import "vbicosmosbasic/todo/paper.proto";
+
+option go_package = "vbi-cosmos-basic/x/todo/types";
+
+// Msg defines the Msg service.
+service Msg {
+  rpc CreatePaper (MsgCreatePaper) returns (MsgCreatePaperResponse);
+  rpc UpdatePaper (MsgUpdatePaper) returns (MsgUpdatePaperResponse);
+  rpc DeletePaper (MsgDeletePaper) returns (MsgDeletePaperResponse);
+}
+message MsgCreatePaper {
+  string creator = 1;
+  string body    = 2;
+  string content = 3;
+}
+
+message MsgCreatePaperResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdatePaper {
+  string creator = 1;
+  uint64 id      = 2;
+  string body    = 3;
+  string content = 4;
+}
+
+message MsgUpdatePaperResponse {}
+
+message MsgDeletePaper {
+  string creator = 1;
+  uint64 id      = 2;
+}
+
+message MsgDeletePaperResponse {}
+
