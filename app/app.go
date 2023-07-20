@@ -112,6 +112,7 @@ import (
 	vbicosmosbasicmodule "vbi-cosmos-basic/x/vbicosmosbasic"
 	vbicosmosbasicmodulekeeper "vbi-cosmos-basic/x/vbicosmosbasic/keeper"
 	vbicosmosbasicmoduletypes "vbi-cosmos-basic/x/vbicosmosbasic/types"
+
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
 	appparams "vbi-cosmos-basic/app/params"
@@ -250,7 +251,8 @@ type App struct {
 	ScopedChatKeeper     capabilitykeeper.ScopedKeeper
 	ChatKeeper           chatmodulekeeper.Keeper
 
-	TodoKeeper todomodulekeeper.Keeper
+	TodoKeeper       todomodulekeeper.Keeper
+	ScopedTestKeeper capabilitykeeper.ScopedKeeper
 	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
 
 	// mm is the module manager

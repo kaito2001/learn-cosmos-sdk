@@ -71909,6 +71909,8 @@ definitions:
         format: uint64
   vbicosmosbasic.chat.MsgDeleteDataResponse:
     type: object
+  vbicosmosbasic.chat.MsgSendMsgSpaceResponse:
+    type: object
   vbicosmosbasic.chat.MsgUpdateDataResponse:
     type: object
   vbicosmosbasic.chat.Params:

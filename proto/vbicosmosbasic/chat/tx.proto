@@ -8,9 +8,10 @@ option go_package = "vbi-cosmos-basic/x/chat/types";
 
 // Msg defines the Msg service.
 service Msg {
-  rpc CreateData (MsgCreateData) returns (MsgCreateDataResponse);
-  rpc UpdateData (MsgUpdateData) returns (MsgUpdateDataResponse);
-  rpc DeleteData (MsgDeleteData) returns (MsgDeleteDataResponse);
+  rpc CreateData   (MsgCreateData  ) returns (MsgCreateDataResponse  );
+  rpc UpdateData   (MsgUpdateData  ) returns (MsgUpdateDataResponse  );
+  rpc DeleteData   (MsgDeleteData  ) returns (MsgDeleteDataResponse  );
+  rpc SendMsgSpace (MsgSendMsgSpace) returns (MsgSendMsgSpaceResponse);
 }
 message MsgCreateData {
   string creator = 1;
@@ -35,4 +36,15 @@ message MsgDeleteData {
 }
 
 message MsgDeleteDataResponse {}
+
+message MsgSendMsgSpace {
+  string user             = 5;
+  string content          = 6;
+  string creator          = 1;
+  string port             = 2;
+  string channelID        = 3;
+  uint64 timeoutTimestamp = 4;
+}
+
+message MsgSendMsgSpaceResponse {}
 

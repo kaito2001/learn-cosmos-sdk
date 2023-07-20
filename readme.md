@@ -20,4 +20,5 @@ In Group 2 (Advanced), learners will understand the data transmission architectu
 - [Lesson 1: gRPC Model](docs/chapter_2/lesson_1.md)
 - [Lesson 2: Make First Module](docs/chapter_2/lesson_2.md)
 - [Lesson 3: Make ToDo Module (CRUD data)](docs/chapter_2/lesson_3.md)
+- [Lesson 4: IBC Protocol](docs/chapter_2/lesson_4.md)
  
