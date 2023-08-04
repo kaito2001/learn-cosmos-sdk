@@ -1,5 +1,5 @@
-# VBICOSMOSBASIC
-**VBICOSMOSBASIC** is a blockchain built using Cosmos SDK and CometBFT consensus and created with [Ignite CLI](https://ignite.com/cli).
+# LEARNCOSMOSBASIC
+**LEARNCOSMOSBASIC** is a blockchain built using Cosmos SDK and CometBFT consensus and created with [Ignite CLI](https://ignite.com/cli).
 
 Born with the goal of making it easy for everyone to get acquainted and master the Cosmos platform. 
 In Group 1 (Basic), learners will understand the basic concept of Cosmos architecture as well as be able to run and operate a chain of 1 node and set up the validator themselves.
@@ -13,7 +13,7 @@ In Group 1 (Basic), learners will understand the basic concept of Cosmos archite
 - [Lesson 6: Make Basic Chain](docs/chapter_1/lesson_6.md)
 - [Lesson 7: Add Validator For Chain](docs/chapter_1/lesson_7.md)
 
-In Group 2 (Advanced), learners will understand the data transmission architecture in Cosmos, develop themselves a data processing module to store in dababase for execution and querying.
+In Group 2 (Advanced), learners will understand the data transmission architecture in Cosmos, develop themselves a data processing module to store in dababase for execution and querying. Deploy ibc with problems related to data, token, smartcontract
 
 2. Group 2: Custom Module Chain (Advanced)
 
